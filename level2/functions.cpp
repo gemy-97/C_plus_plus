@@ -17,29 +17,25 @@
 
         ------------------------------------------------------------------------------------------------------------------
 
-        2-Functions Overload : 
+        2-Functions Overload :
         Define two functions with the same name but taking different arguments regarding the type
-        the function overload is for changing the type of arguments not the return variable 
+        the function overload is for changing the type of arguments not the return variable
 
 */
 void fun(int x, int y = 3)
 {
-    std::cout << x << "   " << y << std::endl;              /*Practice for Default value*/
+    std::cout << x << "   " << y << std::endl; /*Practice for Default value*/
 }
 
-void fun1(int x, int y )
+void fun1(int x, int y)
 {
-    std::cout << "int,int" << std::endl;                    /*Practice for function overload*/
-}    
-
-
-void fun1(int x, float y )
-{
-  std::cout << "int,float" << std::endl;                    /*Practice for function overload*/
+    std::cout << "int,int" << std::endl; /*Practice for function overload*/
 }
 
-
-
+void fun1(int x, float y)
+{
+    std::cout << "int,float" << std::endl; /*Practice for function overload*/
+}
 
 int main()
 {
@@ -52,21 +48,22 @@ int main()
                      by calling the second argument and giving another value
                */
 
-
-/*
-                                The above code practice for default value assignation in functions
-            ---------------------------------------------------------------------------------------------------
-                                The below code practice for function overload 
-
-
-*/
-    fun1(2,3);   // calling the function with int,int 
-    fun1(2,3.5); // compiler error , not knowing which function to call , it can cast to int and call the first one and can call the second , error
-
-    fun1 (2,3.5F); // calling the second function with int,float 
+    /*
+                                    The above code practice for default value assignation in functions
+                ---------------------------------------------------------------------------------------------------
+                                    The below code practice for function overload
 
 
-
+    */
+    fun1(2, 3);      // calling the function with int,int
+    /*fun1(2,3.5);*/ /* compiler error ,
+                         not knowing which function to call ,
+                         it can cast to int and call the first one
+                         also can call the second one with int & float  ,, error
+                         N.B: This line will be commented to compile the file correctly ,
+                         but will remain to explain the differences in this case
+                     */
+    fun1(2, 3.5F);   // calling the second function with int,float
 
     return 0;
 }
